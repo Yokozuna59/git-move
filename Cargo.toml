@@ -1,0 +1,15 @@
+[package]
+name = "git-move"
+version = "0.1.0"
+authors = ["Reda Al Sulais <u.yokozuna@gmail.com>"]
+edition = "2021"
+description = "a git subcommand fixes imports, alternative to `git mv`"
+documentation = ""
+readme = "README.md"
+homepage = "https://github.com/Yokozuna59/git-move"
+repository = "https://github.com/Yokozuna59/git-move"
+license = "MIT"
+keywords = ["git", "cli", "subcommand", "mv"]
+categories = ["command-line-utilities"]
+
+[dependencies]
