@@ -52,8 +52,12 @@ build: build-bin build-doc
 
 build-bin:
 	cat src/version.sh > $(LOCAL_BIN_DIR)/git-move
-	cat src/main.sh >> $(LOCAL_BIN_DIR)/git-move
-	chmod +x $(LOCAL_BIN_DIR)/git-move; sync
+	find $(LOCAL_SRC_DIR) -maxdepth 1 -iname "*.sh" -not -name "version.sh" \
+		-exec sh -c "cat {} >> $(LOCAL_BIN_DIR)/git-move" \;
+	chmod +x $(LOCAL_BIN_DIR)/git-move
+	sed -i -e '1!{/^#!/d;}' -e '/^set -e/,+1d' $(LOCAL_BIN_DIR)/git-move
+	sed -i -e '/^#!/a set -euo pipefail' $(LOCAL_BIN_DIR)/git-move
+	sync
 
 build-doc: build-info build-html build-man
 build-info:
