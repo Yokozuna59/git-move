@@ -51,9 +51,9 @@ all: # build
 build: build-bin build-doc
 
 build-bin:
-	cat src/version.sh > $(BIN)/git-move
-	cat src/main.sh >> $(BIN)/git-move
-	chmod +x $(BIN)/git-move; sync
+	cat src/version.sh > $(LOCAL_BIN_DIR)/git-move
+	cat src/main.sh >> $(LOCAL_BIN_DIR)/git-move
+	chmod +x $(LOCAL_BIN_DIR)/git-move; sync
 
 build-doc: build-info build-html build-man
 build-info:
