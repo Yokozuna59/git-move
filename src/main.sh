@@ -2,10 +2,6 @@
 
 set -euo pipefail
 
-_version() {
-  echo "0.0.0"
-}
-
 _usage() {
   cat <<HELPMSG
 usage: git move [<options>] <source>... <destination>
@@ -98,7 +94,8 @@ main() {
     return 0
     ;;
   -V | --version)
-    _version
+    # shellcheck disable=2154
+    echo "${GITMOVE_VERSION}"
     return 0
     ;;
   *)
