@@ -59,10 +59,10 @@ build-doc: build-info build-html build-man
 build-info:
 	@echo git-move.info is not currently supported!
 build-html:
-	$(TO_HTML) $(LOCAL_MAN_DIR)/git-move.txt
+	$(TO_HTML) $(LOCAL_MAN_DIR)/git-mv.rst
 build-man:
-	$(TO_XML) $(LOCAL_MAN_DIR)/git-move.txt
-	$(XMLTO) man $(LOCAL_MAN_DIR)/git-move.xml -o $(LOCAL_MAN_DIR)
+	$(TO_XML) $(LOCAL_MAN_DIR)/git-mv.rst
+	$(XMLTO) man $(LOCAL_MAN_DIR)/git-mv.xml -o $(LOCAL_MAN_DIR)
 
 
 .PHONY: clean clean-bin clean-doc clean-info clean-html clean-man
