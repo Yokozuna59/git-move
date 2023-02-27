@@ -51,18 +51,18 @@ all: # build
 build: build-bin build-doc
 
 build-bin:
-	cat src/version.sh > $(BIN)/git-move
-	cat src/main.sh >> $(BIN)/git-move
-	chmod +x $(BIN)/git-move; sync
+	cat src/version.sh > $(LOCAL_BIN_DIR)/git-move
+	cat src/main.sh >> $(LOCAL_BIN_DIR)/git-move
+	chmod +x $(LOCAL_BIN_DIR)/git-move; sync
 
 build-doc: build-info build-html build-man
 build-info:
 	@echo git-move.info is not currently supported!
 build-html:
-	$(TO_HTML) $(LOCAL_MAN_DIR)/git-move.txt
+	$(TO_HTML) $(LOCAL_MAN_DIR)/git-mv.rst
 build-man:
-	$(TO_XML) $(LOCAL_MAN_DIR)/git-move.txt
-	$(XMLTO) man $(LOCAL_MAN_DIR)/git-move.xml -o $(LOCAL_MAN_DIR)
+	$(TO_XML) $(LOCAL_MAN_DIR)/git-mv.rst
+	$(XMLTO) man $(LOCAL_MAN_DIR)/git-mv.xml -o $(LOCAL_MAN_DIR)
 
 
 .PHONY: clean clean-bin clean-doc clean-info clean-html clean-man
