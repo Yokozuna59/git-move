@@ -44,8 +44,7 @@ XMLTO = xmlto
 
 # Commands
 .PHONY: all
-all: # build
-	@echo $(GITMOVE_VERSION)
+all: build
 
 .PHONY: build build-bin build-doc build-info build-html build-man
 build: build-bin build-doc
