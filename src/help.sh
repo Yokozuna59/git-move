@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_move_usage() {
+function _move_usage() {
   cat <<HELPMSG
 usage: git move [<options>] <source>... <destination>
     -v, --verbose         be verbose
@@ -11,7 +11,7 @@ usage: git move [<options>] <source>... <destination>
 HELPMSG
 }
 
-_help_usage() {
+function _help_usage() {
   cat <<HELPMSG
 usage: git help [-a|--all] [--[no-]verbose] [--[no-]external-commands] [--[no-]aliases]
    or: git help [[-i|--info] [-m|--man] [-w|--web]] [<command>|<doc>]
@@ -35,7 +35,7 @@ usage: git help [-a|--all] [--[no-]verbose] [--[no-]external-commands] [--[no-]a
 HELPMSG
 }
 
-_help() {
+function _help() {
   method=$(git config --get help.format) || true
   [[ -z "${method}" ]] && method="man"
 

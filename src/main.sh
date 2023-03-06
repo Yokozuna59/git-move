@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-is_valid_path() {
+function is_valid_path() {
   is_in_work_tree=$(git rev-parse --is-inside-work-tree)
   is_in_git_dir=$(git rev-parse --is-inside-git-dir)
 
@@ -17,7 +17,7 @@ is_valid_path() {
   exit "${exit_code}"
 }
 
-main() {
+function main() {
   if [[ "$#" -eq 0 ]]; then
     is_valid_path
   fi
